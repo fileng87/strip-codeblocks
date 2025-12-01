@@ -1,0 +1,13 @@
+[package]
+name = "strip-codeblocks"
+description = "A Rust library to strip markdown code blocks from text, preserving only the inner content"
+version = "0.1.0"
+authors = ["ZyraX <oscarcoll.930714@gmail.com>"]
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/fileng87/strip-codeblocks"
+keywords = ["markdown", "codeblock", "strip", "text-processing"]
+categories = ["text-processing"]
+
+[dependencies]
+regex = "1.12.2"
