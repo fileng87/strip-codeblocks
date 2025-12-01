@@ -79,11 +79,13 @@ pub fn strip_codeblocks(text: &str) -> String {
     // - Three backticks (```)
     // The (?s) flag makes . match newlines
     let re = Regex::new(r"(?s)```[^\n`]*\n(.*?)```").unwrap();
-    
+
     re.replace_all(text, |caps: &regex::Captures| {
         // Extract the content (first capture group)
-        caps.get(1).map_or(String::new(), |m| m.as_str().to_string())
-    }).to_string()
+        caps.get(1)
+            .map_or(String::new(), |m| m.as_str().to_string())
+    })
+    .to_string()
 }
 
 #[cfg(test)]
@@ -203,4 +205,3 @@ y = 2
         assert!(!output.contains("```python"));
     }
 }
-
